@@ -220,34 +220,23 @@ def main(ticker_symbol='MSFT'):
         # Plot results
         plot_results(K_grid, normalized_density, current_price, ticker_symbol, expiry)
 
-        print(f"\n{'='*60}")
+
         print("ANALYSIS COMPLETE")
-        print(f"{'='*60}")
-        print("\nKEY INSIGHTS TO SHARE:")
-        print("1. Check the Expected Value vs Current Price")
-        print("2. Look at the Skew Indicator (market bias)")
-        print("3. Review Tail Probabilities (risk perception)")
-        print("4. Note the Annualized Volatility (uncertainty level)")
+
 
         return K_grid, normalized_density
 
     except Exception as e:
         print(f"\nERROR: {str(e)}")
-        print("Common issues:")
-        print("- Market might be closed (try during market hours)")
-        print("- Ticker might be invalid")
-        print("- No liquid options available")
+
         return None, None
 
 if __name__ == "__main__":
-    # You can change the ticker here
     ticker = "AAPL"  # Try MSFT, AAPL, SPY, etc.
 
     print("Starting Breeden-Litzenberger Analysis")
     print(f"Ticker: {ticker}")
 
-    # Install required packages if needed
-    print("\nNote: Make sure you have installed required packages:")
-    print("pip install yfinance numpy pandas scipy matplotlib")
+    # Required packages: yfinance numpy pandas scipy matplotlib
 
     K_grid, density = main(ticker)
